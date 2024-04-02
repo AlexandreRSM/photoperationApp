@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
     return MaterialApp(
       title: 'Photoperation',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 145, 55, 55)),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 145, 55, 55)),
         useMaterial3: true,
       ),
       home: BlocProvider(

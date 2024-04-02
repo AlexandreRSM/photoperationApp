@@ -13,28 +13,28 @@ class PhotoAppCubit extends Cubit<PhotoAppState> {
   }
 
   //a method to open the camera 
-openCamera() async {
+  openCamera() async {
     //get available cameras
     final cameras = await availableCameras();
 
     //get a camera controller
     final cameraController = CameraController(
-        cameras.first,
-        ResolutionPreset.high,
-        imageFormatGroup: ImageFormatGroup.jpeg
+      cameras.first,
+      ResolutionPreset.high,
+      imageFormatGroup: ImageFormatGroup.jpeg
     );
 
     //initialize camera
     await cameraController.initialize();
     emit (CameraState(
-        controller: cameraController,
-        camera: cameraController.description
+      controller: cameraController,
+      camera: cameraController.description
     ));
   }      
 
 
   //a method to take photo
-takePicture() async {
+  takePicture() async {
 //set the state as CameraState so we can access the controller variable. 
     final currentState = state as CameraState;
     final controller = currentState.controller;
